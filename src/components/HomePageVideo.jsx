@@ -12,10 +12,12 @@ export default function HomePageVideo({children}) {
         autoPlay
         loop 
         muted
+        playsinline // Añadir esta línea
       >
         <source src={video} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+
       
       <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-100 z-100"></div>
       
