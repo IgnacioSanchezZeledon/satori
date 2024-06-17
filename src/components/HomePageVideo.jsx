@@ -2,22 +2,38 @@ import { Transition } from '@headlessui/react';
 import PropTypes from 'prop-types';
 
 import video from '../assets/uploads/video.mp4';
+import video2 from '../assets/uploads/video.webm';
+import gif from '../assets/uploads/video.gif';
 
 export default function HomePageVideo({children}) {
   return (
     <div className="relative w-full h-screen overflow-hidden">
+            
       {/* Video de fondo */}
-      <video 
-        className="absolute inset-0 w-full h-full object-cover z-0" 
-        autoPlay
-        loop 
-        muted
-        playsinline // Añadir esta línea
-      >
-        <source src={video} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <div className="div">
+        {/* Gif de fondo para dispositivos móviles (md) */}
+        <img 
+          src={gif} 
+          alt="Fondo animado" 
+          className="md:hidden absolute inset-0 w-full h-full object-cover z-0"
+        />
 
+        {/* Video para dispositivos mayores a móviles (md) */}
+        <video 
+          className="md:block hidden absolute inset-0 w-full h-full object-cover z-0" 
+          autoPlay
+          loop 
+          muted
+          playsInline
+        >
+          <source src={video} type="video/mp4" />
+          <source src={video2} type="video/webm" />
+
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      
       
       <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-100 z-100"></div>
       
