@@ -41,9 +41,11 @@ export default function NavBar({ home, solutions, aboutUs,contact }) {
       <Disclosure as="nav" className={`relative flex items-center justify-between w-full px-4 ${scrolled ? 'pt-2' : 'pt-10'} transition-all duration-300`}>
         {({ open }) => (
           <div className="flex items-center justify-center w-full text-base font-normal font-poppins max-w-screen-lg mx-auto">
+            
             <div className="absolute left-0 flex items-center md:hidden">
+              
               {/* Mobile menu button */}
-              <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+              <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 z-30 text-gray-400 hover:bg-zinc-90 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                 {open ? (
                   <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                 ) : (
@@ -80,7 +82,7 @@ export default function NavBar({ home, solutions, aboutUs,contact }) {
               enterFrom="opacity-0"
               enterTo="opacity-100"
             >
-              <div className="flex-shrink-0 h-18">
+              <div className="relative flex-shrink-0 h-18 z-30">
                 <img className="h-20" src={logo} alt="Your Company" />
               </div>
             </Transition>
@@ -105,6 +107,25 @@ export default function NavBar({ home, solutions, aboutUs,contact }) {
                 ))}
               </div>
             </Transition>
+
+
+            <Disclosure.Panel className="sm:hidden fixed top-0 left-0 w-full h-full z-20">
+              <div className="fixed inset-0 bg-primary bg-opacity-90 z-10"></div>
+              <div className={`relative z-20 space-y-1 px-10 pb-3 ${scrolled ? 'pt-24' : 'pt-28'} transition-all duration-300 `}>
+                {navigation.map((item) => (
+                  <Disclosure.Button
+                    key={item.name}
+                    as="a"
+                    onClick={() => handleScrollTo(item.ref)}
+                    className="block text-white hover:text-secondary"
+                  >
+                    {item.name}
+                  </Disclosure.Button>
+                ))}
+              </div>
+            </Disclosure.Panel>
+
+
           </div>
         )}
       </Disclosure>
