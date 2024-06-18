@@ -49,9 +49,9 @@ export default function HomePageVideo({children}) {
           <h1 className="py-6 homePageTitle tracking-tight">
             <span>Expertos en transformación digital</span>
           </h1>
-          <span className="homePageSubTitle text-secondary tracking-tight">
+          <h2 className="homePageSubTitle text-secondary tracking-tight">
             Construimos Negocios Digitales a través de la tecnología, la innovación y la consultoría estratégica.
-          </span>
+          </h2>
         </Transition>
       </div>
 

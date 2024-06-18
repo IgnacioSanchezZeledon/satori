@@ -13,7 +13,9 @@ export default function ServiceBox({ serviceImage, title, text }) {
       <div className="relative z-10 p-6 md:p-20">
         <h2 className="text-2xl md:text-5xl font-bold text-center mb-6 md:mb-10 font-poppins tracking-tighter">{title}</h2>
         <div className="text-lg md:text-xl text-justify font-nunito font-normal tracking-tight space-y-4">
-          {text}
+          <h3>
+            {text}  
+          </h3>
         </div>
       </div>
     </div>

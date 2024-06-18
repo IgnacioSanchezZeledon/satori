@@ -17,8 +17,8 @@ export default function HoverBox({ imageSrc, title, description }) {
       />
       {isHovered && (
         <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-80 text-white transition-opacity duration-300 ease-in-out opacity-90">
-          <p className="text-xl text-center">{title}</p>
-          <p className="text-sm text-center p-4">{description}</p>
+          <h2 className="text-xl text-center">{title}</h2>
+          <h3 className="text-sm text-center p-4">{description}</h3>
         </div>
       )}
     </div>

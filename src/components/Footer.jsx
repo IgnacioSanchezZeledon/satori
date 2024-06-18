@@ -40,7 +40,7 @@ export default function Footer() {
             </div>
 
             <div className='py-3'>
-            <a href="https://www.instagram.com/satoriboldvision/" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/50687040004" target="_blank" rel="noopener noreferrer">
             <i className="fa-brands fa-square-whatsapp fa-3x ml-auto  pr-1 hover:text-gray-500"></i>
             </a>
             </div>
