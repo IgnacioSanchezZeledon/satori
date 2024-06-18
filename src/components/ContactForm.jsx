@@ -1,5 +1,6 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import emailjs from 'emailjs-com';
 
 export default function ContactForm ()  {
 
@@ -25,11 +26,26 @@ export default function ContactForm ()  {
       if (!values.email) {
         formik.setFieldError('email', 'El correo electrónico es requerido');
       } else {
-        console.log(values);
-        // Aquí puedes manejar la lógica para enviar el formulario
+        sendEmail(values);
       }
     },
   });
+
+  const sendEmail = (values) => {
+
+    emailjs.send('service_z2b0nw5', 'template_akqk77u', {
+      name: values.name,
+      email: values.email,
+      company: values.company,
+      message: values.message,
+
+    }, 'BEiM6Yed2u0XlWJZP')
+    .then((result) => {
+          console.log('Email sent successfully:', result.text);
+      }, (error) => {
+          console.log('Failed to send email:', error.text);
+      });
+  };
 
   return (
     <div className="max-w-md mx-auto backdrop-filter backdrop-blur-lg rounded-lg shadow-2xl">

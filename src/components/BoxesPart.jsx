@@ -21,7 +21,7 @@ export default function BoxesPart() {
             &quot;Somos <span className="text-secondary">socios estratégicos</span> en la transición hacia lo digital, guiando a las empresas en su transformación. Nos convertimos en el <span className="text-secondary">aliado esencial</span> para lograr <span className="text-secondary">innovación y crecimiento empresarial</span>.&quot;
           </h2>
           
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8 p-8 rounded-lg shadow-xl">
+          <div className="flex flex-wrap flex-col md:flex-row justify-center items-center gap-8 p-8 rounded-lg shadow-xl">
             <div className="p-12">
               <HoverBox 
                 imageSrc={marketingImage} 
